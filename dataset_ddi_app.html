@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dataverse DDI Dataset Submission</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Dataverse DDI Dataset Submission</h1>
+        
+        <!-- Debug Toggle Button -->
+        <button type="button" id="debugToggle" class="debug-toggle">Show Debug Panel</button>
+        
+        <form id="datasetForm">
+            <div class="section">
+                <h2>1. Connect to Dataverse</h2>
+                <div class="form-group">
+                    <label for="serverUrl">Dataverse Server URL <span class="required">*</span></label>
+                    <input type="url" id="serverUrl" name="serverUrl" required 
+                           placeholder="https://your-dataverse-instance.org">
+                </div>
+                <div class="form-group">
+                    <label for="apiToken">API Token <span class="required">*</span></label>
+                    <input type="text" id="apiToken" name="apiToken" required 
+                           placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx">
+                </div>
+                <button type="button" id="testConnection">Test Connection</button>
+                <div id="status"></div>
+                <div class="form-group">
+                    <label for="dataverseSelect">Select Dataverse Collection <span class="required">*</span></label>
+                    <select id="dataverseSelect" name="dataverseAlias" required>
+                        <option value="">-- Test connection first --</option>
+                    </select>
+                    <div class="manual-input" id="manualInput">
+                        <label for="manualAlias">Or enter dataverse alias manually:</label>
+                        <input type="text" id="manualAlias" name="manualAlias" placeholder="root">
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>2. DDI XML Dataset Import</h2>
+                <div class="form-group">
+                    <label for="persistentId">DOI<span class="required">*</span></label>
+                    <input type="text" id="persistentId" name="persistentId" required 
+                           placeholder="10.5072/FK2/XXXXXX">
+                    <small>Format:10.XXX/XXX/XXXXXX or similar</small>
+                </div>
+                
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" id="releaseDataset" name="releaseDataset" unchecked>
+                            Immediately publish dataset after import
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="ddiFile">Upload DDI XML File <span class="required">*</span></label>
+                    <input type="file" id="ddiFile" name="ddiFile" accept=".xml" required>
+                    <small>Select a valid DDI XML file for import</small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="button" id="clearForm">Clear Form</button>
+                <button type="submit" id="submitDataset">Import Dataset</button>
+            </div>
+        </form>
+        
+        <!-- Debug Panel -->
+        <div id="debugPanel" class="debug-panel" style="display: none;">
+            <h3>API Debug Information</h3>
+            <button type="button" id="clearDebug" class="debug-clear">Clear Debug Log</button>
+            <div id="debugContent" class="debug-content"></div>
+        </div>
+    </div>
+
+   <script src="script.js"></script>
+</body>
+</html>
