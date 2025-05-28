@@ -7,5 +7,5 @@ It allows for uploading DDI dataset with existing DOI
 
 The app was written with a help of ChatGPT.
 
-For installation either copy the files locally and open dataset_ddi_app.html in your browser or place it on the server directory that is accessible to a user.
+For installation either copy all files locally and open dataset_ddi_app.html in your browser or place it on the server directory that is accessible to a user.
 It will work on the local machine if the machine has ability to reach Dataverse API.
