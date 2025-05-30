@@ -1,11 +1,31 @@
 # DataverseDDIApp
-An app for importing DDI dataset with existing DOI into dataverse
-This app is a GUI version of Dataverse DDI import api call. 
-https://guides.dataverse.org/en/latest/api/native-api.html#import-a-dataset-into-a-dataverse-installation-with-a-ddi-file
 
-It allows for uploading DDI dataset with existing DOI
+An web app for importing DDI datasets with an existing DOI into Dataverse.
 
-The app was written with a help of ChatGPT.
+## Features
 
-For installation either copy all files locally and open dataset_ddi_app.html in your browser or place it on the server directory that is accessible to a user.
-It will work on the local machine if the machine has ability to reach Dataverse API.
+- Connect to any Dataverse instance using your API token.
+- Select or manually specify a Dataverse collection.
+- Upload DDI XML and optionally publish instantly.
+- Debug panel for troubleshooting.
+
+## Screenshots
+![Screenshot 2025-05-30 120831](https://github.com/user-attachments/assets/67fae3a3-eb85-4149-8c14-03ec0adcba8e)
+
+
+## Quick Start
+
+1. Download or clone this repo.
+2. Open `dataset_ddi_app.html` in your browser.
+3. Fill in your Dataverse URL and API token.
+4. Upload a DDI XML file and import!
+
+## Troubleshooting
+
+- Make sure your API token has sufficient permissions.
+- Check the debug panel for API errors.
+- See [Dataverse API docs](https://guides.dataverse.org/en/latest/api/native-api.html) for more info.
+
+## Contributing
+
+Pull requests welcome! Please open an issue first to discuss major changes.
